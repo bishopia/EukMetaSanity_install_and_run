@@ -1,33 +1,4 @@
-1. install fresh miniconda (not necessary but i did it)
-2. start VNC
-3. mkdir EMS
-4. git clone EMS into EMS
-5. cd EukMetaSanity
-6. instead of running INSTALL.sh script, do it manually, there is some weird editable directory error thrown if you use this script in VNC or on interact node
-7. genemark is already installed, use the module here for this one (be sure to run this command: cp /gpfs/runtime/opt/genemark/4.33/gm_key ~/.gm_key)
-8. install eggnog and kofamscan
-9. install eggnog with pip in EukMS_report env (python -m pip install eggnog-mapper)
-10. install kofascan (instructions here: https://www.genome.jp/ftp/tools/kofam_scan/INSTALL)
-11. don't install ruby or parallel or hmmer, use the modules instead. be sure to change config.yml file for kofascan so that it can find your modules
-12.
-
-14. for this part, remember to add the '' after "-i"
-```
-cd ~/miniconda3/envs/EukMS_run/bin
-sed -i '' 's/transcript_id \"(\.\*)\"/transcript_id \"(\\S\+)"/' filterGenesIn_mRNAname.pl
-cd ~/miniconda3/envs/EukMS_refine/bin
-sed -i '' 's/transcript_id \"(\.\*)\"/transcript_id \"(\\S\+)"/' filterGenesIn_mRNAname.pl
-```
-
-15.
-
-
-/gpfs/home/ibishop/data/ibishop/software/EMS/EukMetaSanity/bin/run-pipeline/run/environment.yml
-/gpfs/home/ibishop/data/ibishop/condas/EukMS_run
-
-
-
-
+I couldn't get EMS install.sh to work just right, so i followed the below instead.
 
 
 ## Setup miniconda
@@ -89,7 +60,7 @@ conda activate /gpfs/home/ibishop/data/ibishop/condas/EukMS_report
 conda activate
 ```
 
-kofascan install
+kofascan install (instructions are here: https://www.genome.jp/ftp/tools/kofam_scan/INSTALL)
 ```
 cd ~/data/ibishop/software
 mkdir -p ./kofamscan/db
